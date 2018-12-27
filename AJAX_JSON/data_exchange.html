@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>AJAX & JSON</title>
+    <script>
+    	window.addEventListener("load", function() {
+    		var oAJAX = new XMLHttpRequest();
+    		oAJAX.open("GET", "http://open-code.pro.host1715875.serv57.hostland.pro/data.json", true);
+    		oAJAX.onreadystatechange = function() {
+    			var oOutput = document.getElementById("oOutput");
+    			if ((oAJAX.readyState == 4) && (oAJAX.status == 200)) {
+    				if (JSON) {
+    					var oData = JSON.parse(oAJAX.responseText);
+    				} else {
+    					var oData = eval(oAJAX.responseText);
+    				}
+    				if (oData.status == 1) {
+    					var oP;
+    					for (i in oData.data) {
+    						oP = document.createElement("p");
+    						oP.textContent = oData.data[i].id + ". " +
+    						oData.data[i].title;
+    						oOutput.appendChild(oP);
+    					}
+    				} else {
+    					oOutput.textContent = "Получены ошибочные данные.";
+    				}
+    			}
+    		}
+    		oAJAX.send();
+    	}, false);
+    </script>
+</head>
+<body>
+	<div id="output"></div>
+</body>
+</html>

@@ -19,8 +19,11 @@ class Menu {
     }
 
     //TODO: удаление меню. Добавить общий для всех метод remove(), который удаляет соответствующий DOM-узел.
-    remove() {
-        var result_remove = ``;
-        return result_remove;
+    remove(tagDel) {
+        //console.log("В remove: ",tagDel); 
+        if   (tagDel == null) alert("Такой тег не найден");
+        tagDel.parentNode.removeChild(tagDel);
+        return ;
     }
 }
+
