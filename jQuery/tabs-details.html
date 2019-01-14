@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta name="viewport" content="width=320, initial-scale=1">
+    <meta charset="utf-8">
+    <style>
+      body, html {
+        min-width: 400px;
+        min-height: 250px;
+        margin: 20px 30px;
+        padding: 0;
+        font-family: Arial;
+        font-size: 14px;
+      }
+      div {
+        display: block;
+        width: 400px;
+        height: 180px;
+        position: relative;
+      }
+      details {
+        display: block;
+        width: 400px;
+        height: 180px;
+        position: absolute;
+
+      }
+      summary {
+        display: inline;
+        width: 120px;
+        height: 30px;
+        position: absolute;
+        /*float: left;*/
+        border: 1px solid grey;
+        border-radius: 3%;
+        background-color: mediumseagreen;
+        color: white;
+        margin: auto;
+        padding: auto;
+      }
+      summary::-webkit-details-marker {
+        display: none;
+      }
+      summary:hover {
+        background-color: lightgreen;
+        cursor: pointer;
+      }
+      summary:focus {
+        background-color: lightgreen;
+        cursor: pointer;
+      }
+      p {
+        margin: 5px 20px;
+      }
+      span {
+        display: block;
+        width: 280px;
+        min-height: 50px;
+        position: absolute;
+        left: 130px;
+        top: 0px;
+        border: 2px solid mediumseagreen;
+        border-radius: 3%;
+        padding: 10px;
+      }
+
+    </style>
+    <!--<link rel="stylesheet" href="style.css"/>
+    <script defer src="jquery-3.3.1.min.js"></script>-->
+
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+    
+  </head>
+  <body>
+    <h2>Вкладки</h2>
+   
+    <div>
+      <details style="top: 0px;">
+          <summary><p>Вкладка 1</p></summary>
+          <span id="span_1">Вкладка 1. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptas, impedit.</span>
+      </details>
+
+      <details style="top: 40px;" open>
+          <summary><p>Вкладка 2</p></summary>
+          <span id="span_2" style="top: -40px;">Вкладка 2. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptas, impedit. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptas, impedit.</span>
+      </details>
+
+      <details style="top: 80px;">
+          <summary><p>Вкладка 3</p></summary>
+          <span id="span_3" style="top: -80px;">Вкладка 3. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptas, impedit. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptas, impedit. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptas, impedit.</span>
+      </details>
+
+    </div>
+
+    <script>
+      
+      $('details').each(test);
+
+      function test() {
+        console.log(this);
+        $('details').removeAttr('open');
+      }
+
+      $('details').on(function() {
+        test;
+        $('details').attr('open');
+      });
+
+
+      //$('span').css({'display': 'block'});
+
+
+    </script>
+  </body>
+</html>
