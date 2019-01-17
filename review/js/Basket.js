@@ -26,17 +26,19 @@ class Basket {
                     id: 'basket_data'
                 });
 
-                this.amount = data.amount; //Общая стоимость товаров в корзине
+                //this.amount = data.amount; //Общая стоимость товаров в корзине
 
+                $basketData.append(`<p>Одобренные отзывы:</p>`);
                 for(let i = 0; i < data.basket.length; i++)
                 {
                     this.basketItems.push(data.basket[i]);
-                }
+                //}
 
-                $basketData.append(`<p>Всего товаров: ${this.basketItems.length}</p>`);
-                $basketData.append(`<p>Общая стоимость: ${this.amount}</p>`);
+                $basketData.append(`<p>Отзыв: ${this.basketItems.basket[i]}</p>`);
+                //$basketData.append(`<p>Общая стоимость: ${this.amount}</p>`);
 
                 $basketData.appendTo(appendId);
+                }
             },
             error: function (err) {
                 console.log('Ошибка', err);
@@ -48,7 +50,7 @@ class Basket {
     {
         let $basketDiv = $('<div />', {
             id: this.id,
-            text: 'Корзина'
+            text: 'Список одобренных отзывов:'
     });
 
         let $basketItemsDiv = $('<div />', {
