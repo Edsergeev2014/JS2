@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta name="viewport" content="width=320, initial-scale=1">
+    <meta charset="utf-8">
+    <style>
+      body, html {
+        min-width: 400px;
+        min-height: 250px;
+        margin: 20px 30px;
+        padding: 0;
+        font-family: Arial;
+        font-size: 14px;
+      }
+      div {
+        display: block;
+        width: 400px;
+        height: 180px;
+        position: relative;
+      }
+      button {
+        display: inline;
+        width: 120px;
+        height: 30px;
+        position: absolute;
+        /*float: left;*/
+        border: 1px solid grey;
+        border-radius: 3%;
+        background-color: seagreen;
+        color: white;
+        margin: auto;
+        padding: auto;
+      }
+      button:hover {
+        background-color: mediumseagreen;
+        cursor: pointer;
+      }
+      button:focus {
+        background-color: mediumseagreen;
+        cursor: pointer;
+      }
+      p {
+        margin: 5px 20px;
+        font-size: 12px;
+      }
+      span {
+        display: block;
+        width: 280px;
+        min-height: 50px;
+        position: absolute;
+        left: 130px;
+        top: 0px;
+        border: 2px solid mediumseagreen;
+        border-radius: 3%;
+        padding: 10px;
+      }
+
+    </style>
+    <!--<link rel="stylesheet" href="style.css"/>
+    <script defer src="jquery-3.3.1.min.js"></script>-->
+
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+    
+  </head>
+  <body>
+    <h2>Вкладки</h2>
+   
+    <div class="container">
+      <button id="btn_1" style="top: 0px;"><p>Вкладка 1</p></button>
+      <span id="span_1">Вкладка 1. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptas, impedit.</span>
+
+      <button id="btn_2" style="top: 40px;"><p>Вкладка 2</p></button>
+      <span id="span_2" style="display:none;">Вкладка 2. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptas, impedit. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptas, impedit.</span>
+
+      <button id="btn_3" style="top: 80px;"><p>Вкладка 3</p></button>
+      <span id="span_3" style="display:none;">Вкладка 3. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptas, impedit. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptas, impedit. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptas, impedit.</span>
+
+    </div>
+
+    <script>
+      var $span_1 = $('#span_1');
+      var $span_2 = $('#span_2');
+      var $span_3 = $('#span_3');
+      var $btn_1 = $('#btn_1');
+      var $btn_2 = $('#btn_2');
+      var $btn_3 = $('#btn_3');
+
+      $btn_1.on('click', function () {
+        $btn_1.css('background-color', 'mediumseagreen');
+        $span_1.show();
+
+        $btn_2.css('background-color', 'seagreen');
+        $btn_3.css('background-color', 'seagreen');
+        $span_2.hide();
+        $span_3.hide();
+      })
+      
+      $btn_2.on('click', function () {
+        $span_2.show();
+        $btn_2.css('background-color', 'mediumseagreen');
+
+        $btn_1.css('background-color', 'seagreen');
+        $btn_3.css('background-color', 'seagreen');
+        $span_1.hide();
+        $span_3.hide();
+      })
+
+      $btn_3.on('click', function () {
+        $span_3.show();
+        $btn_3.css('background-color', 'mediumseagreen');
+
+        $btn_1.css('background-color', 'seagreen');
+        $btn_2.css('background-color', 'seagreen');
+        $span_1.hide();
+        $span_2.hide();
+      })
+      
+    </script>
+  </body>
+</html>
