@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta name="viewport" content="width=320, initial-scale=1">
+    <meta charset="utf-8">
+    <title>ДЗ-6</title>
+    <style>
+      body, html {
+        min-width: 400px;
+        min-height: 250px;
+        margin: 20px 30px;
+        padding: 0;
+        font-family: Arial;
+        font-size:  12px;
+        line-height: 2em;
+      }
+      form {
+        display: inline-block;
+        width: 350px;
+        border: 1px solid lightgrey;
+        border-radius: 6px;
+        background-color: #f5f0e5;
+        padding: 15px;
+        color: #a46313;
+        font-size:  16px;
+        font-weight: bold;
+      }
+      input:invalid {
+        border-color: #a46313;
+      }
+      input,
+      input:valid {
+          margin: 0 10px;
+          border-color: lightgrey;
+          border-radius: 6px;
+          line-height: 2em;
+          font-size:  12px;
+      }
+      textarea {
+        outline: none;
+        -moz-appearance: none;
+        border: 1px solid #999; 
+        resize: none;
+      }
+      p {
+        color: #a46313;
+        line-height: 2em;
+        font-size:  12px;
+        font-weight: normal;
+      }
+    </style>
+    <!--<link rel="stylesheet" href="style.css"/>-->
+    <link rel="stylesheet" href="bower_components/jquery-ui/themes/base/all.css">
+    <link rel="stylesheet" href="bower_components/jquery-ui/themes/humanity/jquery-ui.min.css">
+    <link rel="stylesheet" href="bower_components/jquery-ui/themes/humanity/theme.css">
+    
+
+    <script src="bower_components/jquery/dist/jquery.min.js"></script>
+    <script src="bower_components/jquery-ui/jquery-ui.min.js"></script>
+    <script src="main.js"></script>
+    <script src="form-effects.js"></script>
+
+  </head>
+  <body>
+
+   <p></p>
+   <form id="form">Заполните форму обратной связи:
+      <p>Ваше Имя: </p>
+      <input 
+          type="text" 
+          name="name" 
+          id="username" 
+          placeholder=" Фамилия Имя Отчество" 
+          pattern="^[А-Яа-яЁёA-Za-z\s]+$" 
+          title="Пример: Смирнов Петр Иванович" 
+          size="35">
+      <p>Телефон: </p>
+      <input 
+          type="tel" 
+          name="phone_number" 
+          id="phone_number" 
+          placeholder=" +7(900)123-4567" 
+          pattern="\+7[\(]{0,1}9[0-9]{2}[\)]{0,1}\d{3}[-]\d{4}" 
+          title="Пример: +7(900)123-4567" size="25">
+      <p>E-mail: </p>
+      <input 
+          type="email" 
+          id="email"
+          pattern="[a-zA-Z0-9.!#$%&amp;’*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)+"
+          title="Пример: validate@email.com" 
+          placeholder=" valid@mail.com" 
+          size="25">
+      <p>День рождения: </p>
+      <input 
+          type="text" 
+          id="datepicker"
+          size="25">    
+      <p>Ваш город: </p>
+      <input 
+          type="text" 
+          name="city" 
+          id="region_cities"
+          size="25">
+      <p>Ваше сообщение: </p>
+      <textarea 
+          placeholder=" Ваше сообщение" 
+          rows="7" cols="43"  
+          outline="none"></textarea>
+      <p>
+      <input 
+          type="submit" 
+          value="Отправить" 
+          id="submit"></p>
+      
+    </form>
+
+    <!-- Календарь  -->
+    <div id="datepicker"></div>
+
+    <!-- Всплывающее окно-уведомление  -->
+    <div id="dialog" title="Уведомление:" style="display: 'none';">
+      <p>Заполните, пожалуйста, поля формы согласно примерам.</p>
+    </div> 
+
+  </body>
+</html>
