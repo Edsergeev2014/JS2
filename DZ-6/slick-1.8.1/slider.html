@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta name="viewport" content="width=320, initial-scale=1">
+    <meta charset="utf-8">
+    <title>Слайдер</title>
+    <style>
+      html, body {
+      margin: 0;
+      padding: 0;
+      }
+
+      * {
+        box-sizing: border-box;
+      }
+
+      .slider {
+          width: 80%;
+          margin: 100px auto;
+      }
+
+      .slick-slide {
+        margin: 0px 20px;
+      }
+
+      .slick-slide img {
+        width: 100%;
+      }
+
+      .slick-prev:before,
+      .slick-next:before {
+        color: black;
+      }
+
+
+      .slick-slide {
+        transition: all ease-in-out .3s;
+        opacity: .2;
+      }
+      
+      .slick-active {
+        opacity: .5;
+      }
+
+      .slick-current {
+        opacity: 1;
+      }
+    </style>
+    <!--<link rel="stylesheet" href="style.css"/>-->
+    <link rel="stylesheet" href="../bower_components/jquery-ui/themes/base/all.css">
+    <link rel="stylesheet" href="../bower_components/jquery-ui/themes/humanity/jquery-ui.min.css">
+    <link rel="stylesheet" href="../bower_components/jquery-ui/themes/humanity/theme.css">
+    
+    <link rel="stylesheet" type="text/css" href="./slick/slick.css">
+    <link rel="stylesheet" type="text/css" href="./slick/slick-theme.css">
+
+    <script src="../bower_components/jquery/dist/jquery.min.js"></script>
+    <script src="../bower_components/jquery-ui/jquery-ui.min.js"></script>
+
+    <script src="./slick/slick.min.js"></script>
+
+
+  </head>
+  <body>
+
+  <section class="regular slider">
+    <div>
+      <img src="https://venera-mart.ru/images/thumbnails/280/300/detailed/54/platje-zhenskoje-venera-mart-ru-emma.jpg">
+    </div>
+    <div>
+      <img src="https://venera-mart.ru/images/thumbnails/280/300/product/48/platje-zhenskoje-venera-mart-ru-venera.jpg">
+    </div>
+    <div>
+      <img src="https://venera-mart.ru/images/thumbnails/280/300/product/47/platje-zhenskoje-venera-mart-ru-agnija.jpg">
+    </div>
+    <div>
+      <img src="https://venera-mart.ru/images/thumbnails/280/300/product/34/platje-zhenskoje-venera-mart-ru-lejden.jpg">
+    </div>
+    <div>
+      <img src="https://venera-mart.ru/images/thumbnails/280/300/product/26/Platye_via_venera-mart.ru.JPG">
+    </div>
+    <div>
+      <img src="https://venera-mart.ru/images/thumbnails/280/300/product/47/platje-zhenskoje-venera-mart-ru-alajna.jpg">
+    </div>
+  </section>
+   
+   <!-- Подгрузка скриптов с jQuery, Slick -->
+  <script src="https://code.jquery.com/jquery-2.2.0.min.js" type="text/javascript"></script>
+  <script src="./slick/slick.js" type="text/javascript" charset="utf-8"></script>
+  <script type="text/javascript">
+
+
+    $(document).on('ready', function() {   
+
+      $(".regular").slick({
+        dots: true,
+        infinite: true,
+        slidesToShow: 4,
+        slidesToScroll: 3,
+        autoplay: true,
+        autoplaySpeed: 1500,
+        arrows: true,
+      });     
+    });
+
+  </script>
+    
+  </body>
+</html>
